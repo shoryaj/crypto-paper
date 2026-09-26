@@ -1,0 +1,51 @@
+{
+  "source": "Qin et al. 2021, Fig. 4, doi:10.1007/978-3-662-64322-8_1",
+  "source_type": "published rounded reserve figures, not an archive-node query",
+  "historical_pool": {
+    "before_susd": "243441.12",
+    "before_eth": "879.76",
+    "reported_after_susd": "151021.42",
+    "reported_after_eth": "1419.76",
+    "reported_eth_input": "540"
+  },
+  "fee_free_counterfactual": {
+    "after_susd": 150849.27010987772,
+    "after_eth": 1419.76,
+    "susd_output": 92591.84989012228,
+    "observed_susd_output": 92419.7,
+    "spot_multiplier": 2.6043625908407617,
+    "hypothetical_collateral_susd": "100000",
+    "hypothetical_ltv": "0.75",
+    "hypothetical_flash_fee_rate": "0.0009",
+    "hypothetical_lender_cash_eth": "500",
+    "reference_collateral_value_eth": 361.3851267197588,
+    "borrow_at_reported_input_eth": 500.0,
+    "profit_at_reported_input_eth": 138.12887328024124
+  },
+  "z3": {
+    "status": "sat",
+    "check_ms": 67.2748,
+    "witness_replayed": true
+  },
+  "analytical": {
+    "candidates": [
+      [
+        "0",
+        "-137462500/1521507"
+      ],
+      [
+        "540",
+        "105082023799/760753500"
+      ],
+      [
+        "-21994/25 + 26*sqrt(33001997)/125",
+        "26513525612311/190188375000 - 117*sqrt(33001997)/625000"
+      ]
+    ],
+    "f_star_or_limit": "-21994/25 + 26*sqrt(33001997)/125",
+    "profit_star_or_supremum": "26513525612311/190188375000 - 117*sqrt(33001997)/625000",
+    "profitable": true,
+    "maximum_attained": true
+  },
+  "scope": "Historical AMM reserves only; not a bZx attack replay or historical profit estimate"
+}

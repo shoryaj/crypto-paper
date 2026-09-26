@@ -1,0 +1,140 @@
+{
+  "scope": "Auxiliary distinct-pool DAG conservation, not core attack-synthesis scalability",
+  "platform": "Windows-11-10.0.26200-SP0",
+  "python": "3.12.14",
+  "z3": "5.1.0",
+  "rows": [
+    {
+      "independent_pools": 1,
+      "symbolic_swaps": 1,
+      "assertions": 11,
+      "median_encode_ms": 1.6278,
+      "median_feasibility_and_conservation_ms": 6.1377,
+      "status": "feasible; conservation counterexample UNSAT",
+      "trials": [
+        {
+          "encode_ms": 2.7725,
+          "check_ms": 14.0282
+        },
+        {
+          "encode_ms": 1.5983,
+          "check_ms": 6.1377
+        },
+        {
+          "encode_ms": 1.6278,
+          "check_ms": 4.3232
+        }
+      ]
+    },
+    {
+      "independent_pools": 2,
+      "symbolic_swaps": 2,
+      "assertions": 20,
+      "median_encode_ms": 2.4812,
+      "median_feasibility_and_conservation_ms": 5.9232,
+      "status": "feasible; conservation counterexample UNSAT",
+      "trials": [
+        {
+          "encode_ms": 2.4837,
+          "check_ms": 6.2268
+        },
+        {
+          "encode_ms": 2.4458,
+          "check_ms": 4.6118
+        },
+        {
+          "encode_ms": 2.4812,
+          "check_ms": 5.9232
+        }
+      ]
+    },
+    {
+      "independent_pools": 4,
+      "symbolic_swaps": 4,
+      "assertions": 38,
+      "median_encode_ms": 4.4157,
+      "median_feasibility_and_conservation_ms": 5.1423,
+      "status": "feasible; conservation counterexample UNSAT",
+      "trials": [
+        {
+          "encode_ms": 4.0156,
+          "check_ms": 5.0299
+        },
+        {
+          "encode_ms": 4.9992,
+          "check_ms": 5.1423
+        },
+        {
+          "encode_ms": 4.4157,
+          "check_ms": 6.5597
+        }
+      ]
+    },
+    {
+      "independent_pools": 8,
+      "symbolic_swaps": 8,
+      "assertions": 74,
+      "median_encode_ms": 5.8717,
+      "median_feasibility_and_conservation_ms": 7.4151,
+      "status": "feasible; conservation counterexample UNSAT",
+      "trials": [
+        {
+          "encode_ms": 5.6807,
+          "check_ms": 9.2029
+        },
+        {
+          "encode_ms": 6.7621,
+          "check_ms": 7.4151
+        },
+        {
+          "encode_ms": 5.8717,
+          "check_ms": 7.0167
+        }
+      ]
+    },
+    {
+      "independent_pools": 16,
+      "symbolic_swaps": 16,
+      "assertions": 146,
+      "median_encode_ms": 15.6115,
+      "median_feasibility_and_conservation_ms": 10.0091,
+      "status": "feasible; conservation counterexample UNSAT",
+      "trials": [
+        {
+          "encode_ms": 12.2463,
+          "check_ms": 10.0091
+        },
+        {
+          "encode_ms": 16.8954,
+          "check_ms": 10.3657
+        },
+        {
+          "encode_ms": 15.6115,
+          "check_ms": 6.721
+        }
+      ]
+    },
+    {
+      "independent_pools": 32,
+      "symbolic_swaps": 32,
+      "assertions": 290,
+      "median_encode_ms": 28.956,
+      "median_feasibility_and_conservation_ms": 14.3768,
+      "status": "feasible; conservation counterexample UNSAT",
+      "trials": [
+        {
+          "encode_ms": 27.3114,
+          "check_ms": 15.9377
+        },
+        {
+          "encode_ms": 29.1857,
+          "check_ms": 13.2015
+        },
+        {
+          "encode_ms": 28.956,
+          "check_ms": 14.3768
+        }
+      ]
+    }
+  ]
+}

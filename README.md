@@ -10,6 +10,7 @@ This repository contains Shorya Jaiswal's revised research paper, an executable 
 - Simplified case studies: `case_studies/`
 - Automated tests: `tests/`
 - Saved synthetic results and exported SMT-LIB queries: `results/`
+- Published-reserve counterfactual and auxiliary scaling data: `results/reviewer_extensions/`
 - Figure-generation scripts: `paper/scripts/`
 
 ## Reproduce
@@ -24,6 +25,7 @@ python -m pytest -q
 python -m src.utils.benchmark
 python -m src.utils.plot_results
 python -m src.utils.report
+python -m src.utils.reviewer_extensions
 ```
 
 The saved run used Python 3.14.7, Z3 5.1.0, and SymPy 1.14.0. Its 90 distinct synthetic settings were each repeated three times, yielding 204 SAT, 66 UNSAT, and zero UNKNOWN solver calls. All core SAT witnesses were replayed with exact rational arithmetic. The 31 automated tests passed in the saved test log. Timing and memory figures are descriptive of this recorded run.
@@ -32,6 +34,6 @@ The benchmark rewrites files in `results/`; commit your rerun separately if you 
 
 ## Scope and research integrity
 
-The analytical candidate rule decides the fixed core model. Z3 checks an independent constraint encoding, while the case-study models abstract different historical mechanisms. The manuscript does not claim original on-chain reserve calibration, cross-tool performance superiority, or security of a deployed protocol. See `REVISION_NOTES.md` for the status of reviewer requests.
+The analytical candidate rule decides the fixed core model. Z3 checks an independent constraint encoding, while the case-study models abstract different historical mechanisms. The reserve counterfactual uses rounded sUSD/ETH pool quantities from Qin et al. (2021), Figure 4; its lender settings are hypothetical and it does not replay bZx. The auxiliary size experiment checks pool conservation, not attack synthesis. The manuscript does not claim cross-tool performance superiority or security of a deployed protocol. See `REVISION_NOTES.md` for the status of reviewer requests.
 
-The `paper/research-paper.tex` file is an earlier visual edition; the revised Word document is the current submission draft. No archival DOI has been assigned. Funding and conflict declarations require author confirmation before submission. AI assistance is disclosed in the manuscript.
+The `paper/research-paper.tex` file is an earlier visual edition; the revised Word document is the current submission draft. No archival DOI has been assigned. The author reported no funding and no conflicts of interest. AI assistance is disclosed in the manuscript.
