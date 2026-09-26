@@ -1,0 +1,11 @@
+{
+  "python": "3.14.7",
+  "platform": "Windows-11-10.0.26200-SP0",
+  "processor": "Intel64 Family 6 Model 142 Stepping 12, GenuineIntel",
+  "z3": "5.1.0",
+  "repeats": 3,
+  "flash_cap": 1000,
+  "lending_cash": 400,
+  "collateral": 100,
+  "memory_metric": "process RSS snapshots; not peak or isolated solver overhead"
+}

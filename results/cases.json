@@ -1,0 +1,145 @@
+{
+  "spot": {
+    "status": "sat",
+    "elapsed_ms": 15.7361,
+    "parameters": {
+      "x": "1000",
+      "y": "1000",
+      "ltv": "3/4",
+      "fee": "9/10000",
+      "collateral": "100",
+      "flash_cap": "1000",
+      "cash": "400",
+      "oracle": "spot",
+      "epsilon": "0"
+    },
+    "z3_version": "5.1.0",
+    "statistics": "(:added-eqs                       11\n :arith-eq-adapter                4\n :arith-conflicts                 13\n :arith-diseq                     2\n :arith-fixed-eqs                 1\n :arith-grobner-calls             9\n :arith-horner-calls              2\n :arith-horner-cross-nested-forms 42\n :arith-lower                     19\n :arith-make-feasible             50\n :arith-max-columns               26\n :arith-max-rows                  14\n :arith-nla-add-bounds            1\n :arith-nla-lemmas                7\n :arith-nra-calls                 1\n :arith-upper                     28\n :binary-propagations             6\n :conflicts                       7\n :decisions                       15\n :del-clause                      3\n :final-checks                    9\n :levelwise-calls                 16\n :max-memory                      18.54\n :memory                          18.54\n :mk-bool-var                     44\n :mk-clause                       17\n :mk-clause-binary                8\n :nlsat-conflicts                 8\n :nlsat-propagations              88\n :nlsat-restarts                  1\n :nlsat-stages                    29\n :num-allocs                      30937903253.00\n :num-checks                      1\n :propagations                    17\n :rlimit-count                    1566008\n :time                            0.01)",
+    "witness": {
+      "f": "156",
+      "a_out": "39000/289",
+      "price": "83521/62500",
+      "borrow": "1603/16",
+      "b_return": "156",
+      "profit": "471/10000",
+      "wallet_final": "1000471/10000"
+    },
+    "interpretation": "Feasible counterexample; not an optimum"
+  },
+  "bounded": {
+    "status": "unsat",
+    "elapsed_ms": 0.1996,
+    "parameters": {
+      "x": "1000",
+      "y": "1000",
+      "ltv": "3/4",
+      "fee": "9/10000",
+      "collateral": "100",
+      "flash_cap": "1000",
+      "cash": "400",
+      "oracle": "bounded",
+      "epsilon": "1/10"
+    },
+    "z3_version": "5.1.0",
+    "statistics": "(:added-eqs           8\n :arith-eq-adapter    3\n :arith-conflicts     1\n :arith-fixed-eqs     1\n :arith-lower         9\n :arith-make-feasible 4\n :arith-max-columns   19\n :arith-max-rows      6\n :arith-upper         12\n :binary-propagations 6\n :conflicts           1\n :max-memory          18.64\n :memory              18.25\n :mk-bool-var         26\n :mk-clause           3\n :mk-clause-binary    8\n :num-allocs          31106531943.00\n :num-checks          1\n :propagations        6\n :rlimit-count        1567238)",
+    "interpretation": "Invariant holds only for this encoded model"
+  },
+  "loose_bound": {
+    "status": "sat",
+    "elapsed_ms": 43.3629,
+    "parameters": {
+      "x": "1000",
+      "y": "1000",
+      "ltv": "3/4",
+      "fee": "9/10000",
+      "collateral": "100",
+      "flash_cap": "1000",
+      "cash": "400",
+      "oracle": "bounded",
+      "epsilon": "1"
+    },
+    "z3_version": "5.1.0",
+    "statistics": "(:added-eqs                       13\n :arith-eq-adapter                4\n :arith-bound-propagations-lp     1\n :arith-conflicts                 20\n :arith-diseq                     2\n :arith-fixed-eqs                 1\n :arith-grobner-calls             11\n :arith-grobner-conflicts         1\n :arith-horner-calls              3\n :arith-horner-cross-nested-forms 61\n :arith-lower                     23\n :arith-make-feasible             73\n :arith-max-columns               29\n :arith-max-rows                  16\n :arith-nla-add-bounds            1\n :arith-nla-lemmas                17\n :arith-nla-propagate-eq          1\n :arith-nra-calls                 2\n :arith-upper                     33\n :binary-propagations             6\n :conflicts                       3\n :decisions                       18\n :del-clause                      4\n :final-checks                    14\n :levelwise-calls                 12\n :max-memory                      18.64\n :memory                          18.64\n :mk-bool-var                     59\n :mk-clause                       21\n :mk-clause-binary                9\n :nlsat-conflicts                 6\n :nlsat-propagations              84\n :nlsat-restarts                  1\n :nlsat-stages                    31\n :num-allocs                      31285295128.00\n :num-checks                      1\n :propagations                    19\n :rlimit-count                    1573350\n :time                            0.04)",
+    "witness": {
+      "f": "2",
+      "a_out": "1000/501",
+      "price": "251001/250000",
+      "borrow": "101",
+      "b_return": "2",
+      "profit": "4991/5000",
+      "wallet_final": "504991/5000"
+    },
+    "interpretation": "Feasible counterexample; not an optimum"
+  },
+  "dynamic": {
+    "status": "unsat",
+    "elapsed_ms": 56.4362,
+    "parameters": {
+      "x": "1000",
+      "y": "1000",
+      "ltv": "3/4",
+      "fee": "9/10000",
+      "collateral": "100",
+      "flash_cap": "1000",
+      "cash": "400",
+      "oracle": "dynamic",
+      "epsilon": "0"
+    },
+    "z3_version": "5.1.0",
+    "statistics": "(:added-eqs                       14\n :arith-eq-adapter                5\n :arith-bound-propagations-lp     2\n :arith-conflicts                 22\n :arith-diseq                     2\n :arith-fixed-eqs                 1\n :arith-grobner-calls             11\n :arith-horner-calls              3\n :arith-horner-cross-nested-forms 123\n :arith-lower                     27\n :arith-make-feasible             69\n :arith-max-columns               38\n :arith-max-rows                  21\n :arith-nla-add-bounds            1\n :arith-nla-lemmas                18\n :arith-nla-propagate-eq          2\n :arith-nra-calls                 3\n :arith-upper                     32\n :binary-propagations             8\n :conflicts                       6\n :decisions                       20\n :del-clause                      18\n :final-checks                    13\n :levelwise-calls                 28\n :max-memory                      18.76\n :memory                          18.65\n :mk-bool-var                     65\n :mk-clause                       23\n :mk-clause-binary                11\n :nlsat-conflicts                 16\n :nlsat-propagations              106\n :nlsat-stages                    17\n :num-allocs                      31506968419.00\n :num-checks                      1\n :propagations                    25\n :rlimit-count                    1585249\n :time                            0.06)",
+    "interpretation": "Invariant holds only for this encoded model"
+  },
+  "harvest_proxy": {
+    "status": "sat",
+    "scope": "synthetic two-pool NAV proxy",
+    "fixed": false,
+    "witness": {
+      "h_f1": "1",
+      "h_f2": "1",
+      "h_d": "100",
+      "h_q": "1000000/1002001",
+      "h_sh": "1002001/10000",
+      "h_red": "1102201100/11002001",
+      "h_red + 0 + h_back0 + h_back1 -\n(h_f1 + h_f2 + h_d)*10009/10000": "4955081541/55010005000"
+    }
+  },
+  "harvest_fixed": {
+    "status": "unsat",
+    "scope": "synthetic two-pool NAV proxy",
+    "fixed": true
+  },
+  "euler_health": {
+    "status": "sat",
+    "scope": "donation health invariant only",
+    "fixed": false,
+    "witness": {
+      "e_c": "100",
+      "e_d": "70",
+      "e_donation": "100",
+      "e_after": "0"
+    }
+  },
+  "euler_fixed": {
+    "status": "unsat",
+    "scope": "donation health invariant only",
+    "fixed": true
+  },
+  "uint256": {
+    "status": "sat",
+    "mode": "concrete uint256 trace",
+    "a_out": 90,
+    "returned": 99,
+    "rounding_loss": 1
+  },
+  "symbolic_derivation": {
+    "profit": "L*V*(f/y + 1)**2 - V - f*r",
+    "derivative": "2*L*V*(f/y + 1)/y - r",
+    "second_derivative": "2*L*V/y**2",
+    "stationary_minimum": "-y + r*y**2/(2*L*V)"
+  },
+  "liquidity_bound": {
+    "y_min": "1000/(-1 + sqrt(30270)/150)",
+    "k_min_sufficient": "1000000/(-1 + sqrt(30270)/150)**2",
+    "k_approx": 39118687.605252765
+  }
+}

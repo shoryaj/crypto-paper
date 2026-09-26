@@ -1,0 +1,32 @@
+[
+  {
+    "reserve": 100,
+    "settings": 30,
+    "sat": 30,
+    "unsat": 0,
+    "min_ms": 9.8943,
+    "median_ms": 20.60575,
+    "p95_ms": 44.126535,
+    "max_ms": 52.6188
+  },
+  {
+    "reserve": 1000,
+    "settings": 30,
+    "sat": 30,
+    "unsat": 0,
+    "min_ms": 13.8232,
+    "median_ms": 20.78535,
+    "p95_ms": 36.47659499999999,
+    "max_ms": 43.8261
+  },
+  {
+    "reserve": 10000,
+    "settings": 30,
+    "sat": 8,
+    "unsat": 22,
+    "min_ms": 1.7012,
+    "median_ms": 2.2333,
+    "p95_ms": 21.471734999999995,
+    "max_ms": 29.0528
+  }
+]
