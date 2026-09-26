@@ -2,16 +2,6 @@
 
 This repository contains Shorya Jaiswal's revised research paper, an executable Python/Z3 model, synthetic experiment data, and the code used to generate the figures. The core result concerns a **fixed, abstract, single-transaction AMM and lender composition**. It is not a deployed-contract audit or a historical attack replay.
 
-## Start here
-
-- Revised paper: `paper/Shorya_Jaiswal_Revised_Research_Paper.docx` (PDF reading copy alongside it)
-- Mathematical definitions and proofs: `FORMALIZATION.md`
-- Python verifier: `src/core/`
-- Simplified case studies: `case_studies/`
-- Automated tests: `tests/`
-- Saved synthetic results and exported SMT-LIB queries: `results/`
-- Figure-generation scripts: `paper/scripts/`
-
 ## Reproduce
 
 Use Python 3.12 or newer from this repository root:
