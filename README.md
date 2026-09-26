@@ -6,7 +6,7 @@ I study how a flash loan can distort the spot price of a constant-product AMM an
 
 | Location | What I put there |
 | --- | --- |
-| [`paper/Research_Paper.pdf`](paper/Research_Paper.pdf) and [`paper/Research_Paper.docx`](paper/Research_Paper.docx) | My paper in PDF and editable Word formats. |
+| [`paper/Research_Paper.pdf`](paper/Research_Paper.pdf) and [`paper/Research_Paper.docx`](paper/Research_Paper.docx) | My current paper in PDF and editable Word formats. |
 | [`FORMALIZATION.md`](FORMALIZATION.md) | The model assumptions, equations, and proofs. |
 | [`src/core/`](src/core/) | The AMM, lending, analytical, and Z3 verification code. |
 | [`case_studies/`](case_studies/) | Small bZx-inspired, Harvest, and Euler models. |
@@ -35,4 +35,4 @@ The benchmark writes to `results/`, so a rerun can replace the saved output file
 
 My core model uses a fixed, fee-free AMM swap–borrow–reverse sequence and an explicit non-recourse collateral assumption. Its analytical criterion is the primary decision method; Z3 provides a separate constraint-encoding check. The historical-reserve case uses published rounded sUSD/ETH pool figures with hypothetical lending settings, so it is a sensitivity test rather than a replay of the bZx transaction. The pool-scaling experiment checks conservation in an auxiliary model, not attack-synthesis scalability. I do not claim that this work verifies deployed contracts or outperforms other DeFi tools.
 
-The repository has no archival DOI. I used OpenAI Codex to assist with prose, parts of the prototype, figures, and formatting, as disclosed in the paper.
+The repository has no archival DOI. The paper includes an AI-assistance disclosure.
