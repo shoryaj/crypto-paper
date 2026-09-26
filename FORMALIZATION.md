@@ -1,4 +1,6 @@
-# Formal model, proofs, and scope
+# Model and derivations
+
+I use this document to record the assumptions, state transitions, and proofs behind the paper. The executable implementation is in `src/core/`.
 
 ## 1. Correct direction and units
 
@@ -84,14 +86,14 @@ These are synthetic parameters, not the bZx transaction parameters.
 
 ## 4. Mitigation theorems
 
-**Theorem 2 (bounded oracle).** If 0<poracle<=p0(1+epsilon) and
+**Proposition (bounded oracle).** If 0<poracle<=p0(1+epsilon) and
 L(1+epsilon)<=1, then b<=V and Pi<=-rf<=0. This proof is independent of the
 pool distortion size. The bound must itself be established by the deployed
 oracle implementation. A TWAP name alone supplies no such bound. Multi-block
 manipulation, observation updates, manipulation duration, and oracle sampling
 are outside this model. The tests include a loose bound that remains SAT.
 
-**Theorem 3 (rational dynamic LTV).** Set L(f)=L0/(1+f/y)^2. Then
+**Proposition (rational dynamic LTV).** Set L(f)=L0/(1+f/y)^2. Then
 C p1 L(f)=VL0<V, implying no positive extraction. This is a hypothetical
 policy with access to the modeled distortion; it is not a deployed oracle.
 
@@ -113,7 +115,7 @@ By convexity and g(0)<0 this suffices for every allowed flash size. It is exact
 for the uncapped model, but only sufficient with a binding T. The exact capped
 criterion is Theorem 1. T<=V is already safe regardless of pool liquidity.
 Lending TVL alone does not determine V or F, and k alone does not determine y
-unless p0 is fixed. Therefore no universal k_min(TVL) follows from the prompt.
+unless p0 is fixed. Therefore no universal k_min(TVL) follows without additional assumptions.
 If flash capacity scales as F=gamma y, greater depth scales accessible loans
 too; substitute that relation afresh rather than applying a fixed-F claim.
 For unbounded f and r=0 with T>V, any finite pool can eventually reach the cap

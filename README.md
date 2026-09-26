@@ -1,10 +1,22 @@
-# Crypto paper: economic invariant analysis for DeFi
+# Economic invariant analysis of a DeFi flash-loan model
 
-This repository contains Shorya Jaiswal's research paper, an executable Python/Z3 model, synthetic experiment data, and the code used to generate the figures. The core result concerns a **fixed, abstract, single-transaction AMM and lender composition**. It is not a deployed-contract audit or a historical attack replay.
+I study how a flash loan can distort the spot price of a constant-product AMM and affect a connected lending protocol. I derive exact profit conditions and mitigation bounds for a fixed transaction sequence, then check the model with Python and Z3. The repository contains my paper, source code, tests, figures, and experiment data.
 
-## Reproduce
+## Project files
 
-Use Python 3.12 or newer from this repository root:
+| Location | What I put there |
+| --- | --- |
+| [`paper/Research_Paper.pdf`](paper/Research_Paper.pdf) and [`paper/Research_Paper.docx`](paper/Research_Paper.docx) | My paper in PDF and editable Word formats. |
+| [`FORMALIZATION.md`](FORMALIZATION.md) | The model assumptions, equations, and proofs. |
+| [`src/core/`](src/core/) | The AMM, lending, analytical, and Z3 verification code. |
+| [`case_studies/`](case_studies/) | Small bZx-inspired, Harvest, and Euler models. |
+| [`tests/`](tests/) | Automated checks of the model and its controls. |
+| [`results/`](results/) | Saved solver decisions, SMT-LIB queries, measurements, and case outputs. |
+| [`paper/figures/`](paper/figures/) | Figures for the paper and a plot of the saved experiment. |
+
+## Run the project
+
+From the repository root, use Python 3.12 or newer. On Windows, I run:
 
 ```powershell
 python -m venv .venv
@@ -12,17 +24,15 @@ python -m venv .venv
 python -m pip install -r requirements.txt
 python -m pytest -q
 python -m src.utils.benchmark
+python -m src.utils.reviewer_extensions
 python -m src.utils.plot_results
 python -m src.utils.report
-python -m src.utils.reviewer_extensions
 ```
 
-The saved run used Python 3.14.7, Z3 5.1.0, and SymPy 1.14.0. Its 90 distinct synthetic settings were each repeated three times, yielding 204 SAT, 66 UNSAT, and zero UNKNOWN solver calls. All core SAT witnesses were replayed with exact rational arithmetic. The 31 automated tests passed in the saved test log. Timing and memory figures are descriptive of this recorded run.
+The benchmark writes to `results/`, so a rerun can replace the saved output files. I recommend committing or copying the supplied results before rerunning it if you want to compare runs. The measured experiment includes 90 parameter settings with three Z3 calls each: 204 SAT, 66 UNSAT, and no UNKNOWN results. The analytical decision agrees with every setting, and the automated test suite passed 31 tests.
 
-The benchmark rewrites files in `results/`; commit your rerun separately if you want to compare it to the supplied data. Each exported `.smt2` file is one query from the recorded sweep.
+## What the results mean
 
-## Scope and research integrity
+My core model uses a fixed, fee-free AMM swap–borrow–reverse sequence and an explicit non-recourse collateral assumption. Its analytical criterion is the primary decision method; Z3 provides a separate constraint-encoding check. The historical-reserve case uses published rounded sUSD/ETH pool figures with hypothetical lending settings, so it is a sensitivity test rather than a replay of the bZx transaction. The pool-scaling experiment checks conservation in an auxiliary model, not attack-synthesis scalability. I do not claim that this work verifies deployed contracts or outperforms other DeFi tools.
 
-The analytical candidate rule decides the fixed core model. Z3 checks an independent constraint encoding, while the case-study models abstract different historical mechanisms. The reserve counterfactual uses rounded sUSD/ETH pool quantities from Qin et al. (2021), Figure 4; its lender settings are hypothetical and it does not replay bZx. The auxiliary size experiment checks pool conservation, not attack synthesis. The manuscript does not claim cross-tool performance superiority or security of a deployed protocol. See `REVISION_NOTES.md` for the status of reviewer requests.
-
-The `paper/research-paper.tex` file is an earlier visual edition; the revised Word document is the current submission draft. No archival DOI has been assigned. The author reported no funding and no conflicts of interest. AI assistance is disclosed in the manuscript.
+The repository has no archival DOI. I used OpenAI Codex to assist with prose, parts of the prototype, figures, and formatting, as disclosed in the paper.

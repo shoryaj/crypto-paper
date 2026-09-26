@@ -1,4 +1,4 @@
-"""Generate manuscript data and a compact report strictly from stored runs."""
+"""Generate a compact experiment summary strictly from stored runs."""
 import csv
 import json
 from pathlib import Path
@@ -19,23 +19,21 @@ def main():
             round(median(int(r['rss_after_bytes'])/2**20 for r in group),2)])
     cases=json.loads(Path('results/cases.json').read_text(encoding='utf-8'))
     counts={s:sum(r['status']==s for r in rows) for s in ('sat','unsat','unknown')}
-    text='# Executed experiment results\n\n'
-    text+=f"270 queries / 90 configurations: {counts}. All core SAT witnesses replayed exactly; all decisions agree with the analytic criterion.\n\n"
+    settings=len({(r['reserve'],r['ltv'],r['fee']) for r in rows})
+    text='# Experiment results\n\n'
+    text+=(f'I ran {len(rows)} Z3 queries across {settings} parameter settings: '
+           f'{counts["sat"]} SAT, {counts["unsat"]} UNSAT, and '
+           f'{counts["unknown"]} UNKNOWN. I replayed every core SAT witness '
+           'with exact rational arithmetic, and every decision agrees with '
+           'the analytical criterion.\n\n')
     text+=tabulate(table,headers=['Reserve x=y','SAT','UNSAT','UNKNOWN','Median ms','Max ms','Median process RSS MiB'],tablefmt='github')+'\n\n'
-    text+='RSS is a process snapshot, not isolated or peak memory. Timings cover solver.check only.\n\n'
+    text+='I report process RSS snapshots rather than isolated or peak solver memory. Timings cover `solver.check()` only.\n\n'
     text+='## Case study decisions\n\n'
     text+=tabulate([(n,c['status']) for n,c in cases.items() if 'status' in c],
                    headers=['Case','Decision'],tablefmt='github')+'\n\n'
     text+='## Exact analytic reserve bound\n\n'+json.dumps(cases['liquidity_bound'],indent=2)+'\n\n'
-    text+='This is a sufficient fixed-cap depth bound, not a universal TVL-only minimum.\n'
+    text+='I use this as a sufficient fixed-cap depth bound, not a universal TVL-only minimum.\n'
     Path('results/SUMMARY.md').write_text(text,encoding='utf-8')
-    lines=[f'The sweep returned {counts["sat"]} SAT, {counts["unsat"]} UNSAT, and {counts["unknown"]} UNKNOWN decisions across 270 checks. All SAT witnesses replayed exactly and all decisions agreed with the analytic criterion.',
-        r'\begin{table}[t]\centering\caption{Measured core results; 90 checks per reserve scale.}\begin{tabular}{rrrrr}\toprule',
-        r'$x=y$ & SAT & UNSAT & Med. ms & Max ms\\\midrule']
-    for row in table:
-        lines.append(f'{row[0]} & {row[1]} & {row[2]} & {row[4]} & {row[5]}' + r'\\')
-    lines.append(r'\bottomrule\end{tabular}\end{table}')
-    Path('paper/evaluation.tex').write_text('\n'.join(lines),encoding='utf-8')
     print(text)
 
 
