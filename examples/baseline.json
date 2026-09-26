@@ -1,0 +1,14 @@
+{
+  "name": "Synthetic baseline",
+  "description": "Normalized example used to illustrate the fee-free model; these are not historical protocol parameters.",
+  "parameters": {
+    "x_init": "1000",
+    "y_init": "1000",
+    "collateral_val": "100",
+    "ltv_val": "0.75",
+    "fee_rate": "0.0009",
+    "flash_cap": "1000",
+    "lending_cash": "400",
+    "oracle": "spot"
+  }
+}

@@ -13,3 +13,5 @@ __pycache__/
 *.log
 *.out
 *.synctex.gz
+demo-result.json
+demo-query.smt2

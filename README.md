@@ -13,6 +13,7 @@ I study how a flash loan can distort the spot price of a constant-product AMM an
 | [`tests/`](tests/) | Automated checks of the model and its controls. |
 | [`results/`](results/) | Saved solver decisions, SMT-LIB queries, measurements, and case outputs. |
 | [`paper/figures/`](paper/figures/) | Figures for the paper and a plot of the saved experiment. |
+| [`src/cli.py`](src/cli.py) and [`examples/`](examples/) | A single-scenario command I can run in VS Code, including a clearly labeled historical-reserve counterfactual. |
 
 ## Run the project
 
@@ -29,7 +30,16 @@ python -m src.utils.plot_results
 python -m src.utils.report
 ```
 
-The benchmark writes to `results/`, so a rerun can replace the saved output files. I recommend committing or copying the supplied results before rerunning it if you want to compare runs. The measured experiment includes 90 parameter settings with three Z3 calls each: 204 SAT, 66 UNSAT, and no UNKNOWN results. The analytical decision agrees with every setting, and the automated test suite passed 31 tests.
+To demonstrate the coding part without rerunning the full sweep, I use:
+
+```powershell
+python -m src.cli --scenario examples/baseline.json --json-out demo-result.json --query-out demo-query.smt2
+python -m src.cli --scenario examples/historical_reserves.json
+```
+
+The first command prints a Z3 decision, a rationally replayed witness, the analytical maximum or supremum, and whether the two decision methods agree. It also saves the complete result and the exact SMT-LIB query for inspection. The second command uses published bZx pool reserves with **hypothetical** lender parameters; it is not a replay of the historical attack. I can edit the decimal strings in either JSON file to test another scenario. The `demo-result.json` and `demo-query.smt2` files are local demonstration outputs and are ignored by Git.
+
+The benchmark writes to `results/`, so a rerun can replace the saved output files. I recommend committing or copying the supplied results before rerunning it if you want to compare runs. The measured experiment includes 90 parameter settings with three Z3 calls each: 204 SAT, 66 UNSAT, and no UNKNOWN results. The analytical decision agrees with every setting. The paper's recorded test run had 31 passing tests; the current suite, including the command-line checks, has 36.
 
 ## What the results mean
 

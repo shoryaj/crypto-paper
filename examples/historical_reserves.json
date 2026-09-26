@@ -1,0 +1,15 @@
+{
+  "name": "Published bZx pool reserves with hypothetical lender",
+  "description": "Only the starting sUSD/ETH reserves and the 540 ETH pool input come from the published bZx analysis. The lender, collateral, loan-to-value ratio, fee, and cash cap are hypothetical. This is not a transaction replay or historical profit estimate.",
+  "source": "Qin et al., Financial Cryptography and Data Security 2021, Figure 4, DOI 10.1007/978-3-662-64322-8_1",
+  "parameters": {
+    "x_init": "243441.12",
+    "y_init": "879.76",
+    "collateral_val": "100000",
+    "ltv_val": "0.75",
+    "fee_rate": "0.0009",
+    "flash_cap": "540",
+    "lending_cash": "500",
+    "oracle": "spot"
+  }
+}
