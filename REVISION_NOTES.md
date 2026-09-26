@@ -7,6 +7,7 @@ The revised Word paper is the current manuscript. Changes were checked against t
 | Match title to model scope; state contributions; answer research questions | Revised title and Sections 1 and 8 |
 | Repair terminology, Theorem 1, square root, broken tables and orphaned text | Rebuilt Word paper from the clean model and rerendered |
 | Explain role of SMT given the closed form | Sections 1 and 7.2 explicitly make the analytical criterion primary |
+| Show the coding work in the manuscript | Section 5.1 maps equations and experiments to repository paths, prints short excerpts from the AMM constraint and verifier accounting, and gives reproduction commands. The full source remains in the repository; code screenshots were avoided in the main paper. |
 | Position work against DeFiPoser, Clockwork Finance, FlashSyn, FORAY | Section 6 scope comparison with published citations |
 | Expand bibliography, cite Z3, SymPy, AMM/oracle work | 13 references, including published versions where verified |
 | Replace output screenshots, repair plot labels | Five clean model/data figures; screenshot evidence is not in the revised paper |
