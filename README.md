@@ -1,6 +1,6 @@
 # Crypto paper: economic invariant analysis for DeFi
 
-This repository contains Shorya Jaiswal's revised research paper, an executable Python/Z3 model, synthetic experiment data, and the code used to generate the figures. The core result concerns a **fixed, abstract, single-transaction AMM and lender composition**. It is not a deployed-contract audit or a historical attack replay.
+This repository contains Shorya Jaiswal's research paper, an executable Python/Z3 model, synthetic experiment data, and the code used to generate the figures. The core result concerns a **fixed, abstract, single-transaction AMM and lender composition**. It is not a deployed-contract audit or a historical attack replay.
 
 ## Reproduce
 
